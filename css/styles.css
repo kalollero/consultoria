@@ -1,0 +1,606 @@
+@charset "UTF-8";
+/* ================================
+		INICIAN MÓDULOS
+=================================*/
+/* -------- base --------*/
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+:root {
+  --verde: #00B3A1;
+  --verdeOscuro: #1B3537;
+  --azul: #3c4fa8;
+  --blanco: #FBFBFB;
+  --negro: #1B2728;
+  --verdePistache: #57D9BA;
+  --verdeIntenso: #00C1A1;
+  --gray: #DBE2E9;
+  font-size: 16px;
+}
+.nav {
+  z-index: 20;
+}
+
+.home {
+  z-index: 18;
+}
+
+.about {
+  z-index: 16;
+}
+
+.description {
+  z-index: 16;
+}
+
+.video {
+  z-index: 16;
+}
+
+.writers {
+  z-index: 16;
+}
+
+.reviews {
+  z-index: 16;
+}
+
+.stores {
+  z-index: 16;
+}
+
+.foote {
+  z-index: 16;
+}
+
+.nav,
+.home,
+.book,
+.about,
+.description,
+.video,
+.writers__nav,
+.writers__lucyCastillo,
+.writers__VanessaCano,
+.reviews,
+.stores,
+.footer {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+}
+@media (min-width: 320px) {
+  .nav,
+.home,
+.book,
+.about,
+.description,
+.video,
+.writers__nav,
+.writers__lucyCastillo,
+.writers__VanessaCano,
+.reviews,
+.stores,
+.footer {
+    -ms-grid-columns: 1rem 1rem auto 1rem auto 1rem auto 1rem auto 1rem 1rem;
+    grid-template-columns: 1rem repeat(4, auto) 1rem;
+    grid-column-gap: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .nav,
+.home,
+.book,
+.about,
+.description,
+.video,
+.writers__nav,
+.writers__lucyCastillo,
+.writers__VanessaCano,
+.reviews,
+.stores,
+.footer {
+    -ms-grid-columns: 2rem 1rem auto 1rem auto 1rem auto 1rem auto 1rem auto 1rem auto 1rem auto 1rem auto 1rem 2rem;
+    grid-template-columns: 2rem repeat(8, auto) 2rem;
+    grid-column-gap: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .nav,
+.home,
+.book,
+.about,
+.description,
+.video,
+.writers__nav,
+.writers__lucyCastillo,
+.writers__VanessaCano,
+.reviews,
+.stores,
+.footer {
+    -ms-grid-columns: 3rem 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 1fr 1rem 3rem;
+    grid-template-columns: 3rem repeat(12, 1fr) 3rem;
+    grid-column-gap: 1rem;
+  }
+}
+.regular {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.black {
+  font-weight: 900;
+}
+
+em {
+  font-weight: 700;
+  color: #00C1A1;
+}
+
+.svg-inline--fa.fa-w-14,
+.svg-inline--fa.fa-w-18 {
+  font-size: 1.5rem;
+  color: var(--gray);
+}
+
+.svg-inline--fa.fa-w-14:hover,
+.svg-inline--fa.fa-w-18:hover {
+  color: var(--azul);
+}
+
+.fa-long-arrow-right {
+  font-size: 16px;
+  color: var(--oscuro);
+}
+
+.store__amazonOscuro,
+.store__gandhiOscuro,
+.store__barnesOscuro,
+.store__ibookOscuro,
+.store__amazonClaro,
+.store__gandhiClaro,
+.store__barnesClaro,
+.store__ibookClaro {
+  height: 2.75rem;
+  margin-left: 1rem;
+}
+
+/* -------- nav --------*/
+.nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: none;
+}
+@media (min-width: 1024px) {
+  .nav__content {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 8;
+    grid-column: 2/10;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav__content .circle {
+    background-color: var(--azul);
+    border-radius: 50%;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin: 0.75rem 1.5rem 0.75rem 0;
+  }
+}
+
+/* -------- Home --------*/
+.home {
+  background-color: var(--verde);
+}
+@media (min-width: 1024px) {
+  .home {
+    -ms-grid-rows: 1rem auto 2rem 1rem auto 2rem;
+    grid-template-rows: 1rem auto 2rem 1rem auto 2rem;
+    grid-column-gap: 1rem;
+  }
+  .home .book {
+    height: 100vh;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 14;
+    grid-column: 1/15;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-rows: 10vh auto;
+    grid-template-rows: 10vh auto;
+    grid-column-gap: 1rem;
+  }
+  .home .book__logoBanner {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 12;
+    grid-column: 2/14;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .home .book__logoBanner img.home__logo {
+    height: 8vh;
+  }
+  .home .book__logoBanner .home__socialNetworks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .home .book__logoBanner .home__socialNetworks svg {
+    margin: 0 0.25rem;
+  }
+  .home .book__title {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 5;
+    grid-column: 2/7;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .home .book__title img.title {
+    height: 60vh;
+  }
+  .home .book__title a.home__button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: var(--blanco);
+    padding: 0.25rem 2rem 0.25rem 2rem;
+    border-radius: 20px;
+  }
+  .home .book__title a.home__button p.linkComprar {
+    color: var(--verdeOscuro);
+  }
+  .home .book__title a.home__button svg.fa-long-arrow-right {
+    font-size: 1.1rem;
+    color: var(--oscuro);
+    margin-right: 0.5rem;
+  }
+  .home .book__title a.home__button:hover {
+    background-color: var(--azul);
+  }
+  .home .book__title a.home__button:hover p.linkComprar,
+.home .book__title a.home__button:hover svg.fa-long-arrow-right {
+    color: var(--blanco);
+  }
+  .home .about {
+    height: 100vh;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 14;
+    grid-column: 1/15;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5/6;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    grid-column-gap: 1rem;
+  }
+  .home .about__info {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 5;
+    grid-column: 2/7;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .home .about__info p {
+    text-align: right;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 1rem;
+  }
+  .home .about__info h6 {
+    text-align: right;
+    color: var(--blanco);
+  }
+  .home .about__info div.about__stores {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .home img.home__book {
+    height: 85vh;
+    width: auto;
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 5;
+    grid-column: 9/14;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 4;
+    grid-row: 2/6;
+    position: sticky;
+    top: 10vh;
+    margin-bottom: 3rem;
+  }
+}
+
+/* -------- About --------*/
+/* -------- Description --------*/
+.description {
+  background-color: var(--blanco);
+}
+@media (min-width: 1024px) {
+  .description {
+    -ms-grid-rows: 4rem auto 0rem;
+    grid-template-rows: 4rem auto 0rem;
+    grid-column-gap: 1rem;
+  }
+  .description__content {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 6;
+    grid-column: 5/11;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .description__logoVerde {
+    height: 15vh;
+  }
+  .description__summary p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .description__summary em {
+    color: var(--verdeIntenso);
+  }
+  .description__line {
+    width: 2px;
+    background-color: var(--negro);
+    height: 20vh;
+    margin: 2rem 0 0;
+  }
+}
+
+/* -------- Video --------*/
+.video {
+  background-color: #000000;
+}
+@media (min-width: 1024px) {
+  .video {
+    height: 100vh;
+  }
+  .video__play {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 12;
+    grid-column: 2/14;
+    -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    width: 5vw;
+  }
+  .video__autoras {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 12;
+    grid-column: 2/14;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* -------- Writers --------*/
+@media (min-width: 1024px) {
+  .writers__nav, .writers__lucyCastillo, .writers__vanessaCano {
+    height: 100vh;
+    -ms-grid-rows: 1rem auto 1rem;
+    grid-template-rows: 1rem auto 1rem;
+    grid-column-gap: 1rem;
+  }
+  .writers__nav {
+    background-color: var(--azul);
+  }
+  .writers__lucyCastillo {
+    background: url(../img/lucyCastillo.webp) no-repeat right center;
+    background-size: cover;
+  }
+  .writers__lucyCastillo .lucyCastillo__content {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 5;
+    grid-column: 2/7;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+  .writers__lucyCastillo .lucyCastillo__content h1 {
+    font-weight: 700;
+  }
+  .writers__lucyCastillo .lucyCastillo__content p {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+  }
+  .writers__vanessaCano .vanessaCano__content {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 5;
+    grid-column: 2/7;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+  .writers__vanessaCano .vanessaCano__content h1 {
+    font-weight: 700;
+  }
+  .writers__vanessaCano .vanessaCano__content p {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+  }
+}
+
+/* -------- Reviews --------*/
+/* -------- Stores --------*/
+@media (min-width: 1024px) {
+  .stores {
+    height: 100vh;
+    background: url(../img/bookStores.webp) no-repeat 60% 50%;
+    background-size: cover;
+    -ms-grid-rows: 2rem auto 2rem;
+    grid-template-rows: 2rem auto 2rem;
+    grid-column-gap: 1rem;
+  }
+  .stores__info {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 5;
+    grid-column: 2/7;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .stores__shop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .stores__shop h4 {
+    font-family: "Playfair Display", serif;
+    text-align: right;
+    font-style: italic;
+    color: var(--blanco);
+    margin-bottom: 1rem;
+  }
+  .stores__shop .stores__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+/* -------- footer --------*/
+.footer {
+  background-color: var(--negro);
+}
+@media (min-width: 1024px) {
+  .footer {
+    -ms-grid-rows: 4rem auto auto auto 4rem;
+    grid-template-rows: 4rem auto auto auto 4rem;
+    grid-column-gap: 1rem;
+    min-height: 40vh;
+  }
+  .footer__frase, .footer__nav, .footer__socialNetworks {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 12;
+    grid-column: 2/14;
+  }
+  .footer__frase {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    width: 25vw;
+  }
+  .footer__nav {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0.5rem 0;
+  }
+  .footer__nav a {
+    color: var(--gray);
+    font-family: "Roboto", sans-serif;
+  }
+  .footer__nav div {
+    color: var(--gray);
+    margin: 0 0.5rem;
+  }
+  .footer__socialNetworks {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .footer__socialNetworks a {
+    margin: 0 0.5rem;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
